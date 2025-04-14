@@ -1,33 +1,49 @@
-function togglePassword() {
-  const passwordInput = document.getElementById("password");
-  const icon = document.querySelector(".toggle-password");
+let result = document.getElementById("result");
+let history = document.getElementById("history");
 
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    icon.textContent = "🙈";
-  } else {
-    passwordInput.type = "password";
-    icon.textContent = "👁️";
+function append(value) {
+  result.value += value;
+}
+
+function clearAll() {
+  result.value = "";
+  history.innerText = "";
+}
+
+function deleteLast() {
+  result.value = result.value.slice(0, -1);
+}
+
+function sqrt() {
+  try {
+    result.value = Math.sqrt(eval(result.value));
+  } catch {
+    result.value = "Error";
   }
 }
 
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const message = document.getElementById("message");
+function power() {
+  result.value += "**";
+}
 
-  if (!email || !password) {
-    message.textContent = "Please fill in all fields.";
-    return;
+function calculate() {
+  try {
+    history.innerText = result.value + " =";
+    result.value = eval(result.value);
+  } catch {
+    result.value = "Error";
   }
+}
 
-  // Simulated login logic
-  if (email === "admin@example.com" && password === "123456") {
-    message.style.color = "green";
-    message.textContent = "Login successful!";
-  } else {
-    message.style.color = "red";
-    message.textContent = "Invalid credentials!";
+// Keyboard support
+document.addEventListener("keydown", (e) => {
+  if ((e.key >= '0' && e.key <= '9') || "+-*/().".includes(e.key)) {
+    append(e.key);
+  } else if (e.key === "Enter") {
+    calculate();
+  } else if (e.key === "Backspace") {
+    deleteLast();
+  } else if (e.key === "Escape") {
+    clearAll();
   }
 });

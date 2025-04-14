@@ -1,113 +1,71 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-  height: 100vh;
-  background: linear-gradient(to right, #667eea, #764ba2);
+  background: #181818;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.login-box {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  width: 100%;
-  max-width: 380px;
-  text-align: center;
+.calculator {
+  width: 320px;
+  background: #242424;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px #000;
 }
 
-.login-box h2 {
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.input-box {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.input-box input {
-  width: 100%;
-  padding: 12px 10px;
-  background: transparent;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.input-box input:focus {
-  border-color: #764ba2;
-}
-
-.input-box label {
-  position: absolute;
-  left: 10px;
-  top: 12px;
-  color: #aaa;
-  pointer-events: none;
-  transition: 0.3s ease;
-}
-
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-  top: -12px;
-  left: 5px;
-  font-size: 12px;
-  background: #fff;
-  padding: 0 4px;
-  color: #764ba2;
-}
-
-.password-box {
-  position: relative;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  top: 13px;
-  cursor: pointer;
-  font-size: 18px;
-  color: #666;
-}
-
-.remember {
-  text-align: left;
+.display {
   margin-bottom: 20px;
 }
 
-button {
+#result {
   width: 100%;
-  padding: 12px;
+  font-size: 24px;
+  padding: 10px;
   border: none;
-  background: #764ba2;
-  color: #fff;
-  font-size: 16px;
+  outline: none;
+  background: #1a1a1a;
+  color: #0f0;
   border-radius: 8px;
+}
+
+#history {
+  color: #999;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.2s;
 }
 
 button:hover {
-  background: #667eea;
+  background: #444;
 }
 
-.message {
-  margin-top: 15px;
-  font-size: 14px;
-  color: red;
+.equal {
+  grid-column: span 4;
+  background: #00c853;
+  color: white;
 }
 
-@media (max-width: 420px) {
-  .login-box {
-    padding: 30px 20px;
-  }
+.equal:hover {
+  background: #00e676;
 }

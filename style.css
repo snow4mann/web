@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 10px;
+  background: transparent;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #764ba2;
+}
+
+.input-box label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -12px;
+  left: 5px;
+  font-size: 12px;
+  background: #fff;
+  padding: 0 4px;
+  color: #764ba2;
+}
+
+.password-box {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.remember {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #764ba2;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #667eea;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: red;
+}
+
+@media (max-width: 420px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+}
